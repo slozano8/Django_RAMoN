@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+
+{% block content %}
+<h1>What Not to Eat</h1>
+<p>Select a food from the list and check if food is safe for renal diet.</p>
+
+<form action = "check_items" method = "GET">
+
+    <label for="food">Choose a food:</label>
+    <select name="food" id="food">
+        <option value="">Select one</option>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="chicken">Chicken</option>
+        <option value="pizza">Pizza</option>
+        <option value="cake">Cake</option>
+        <option value="meat">Meat</option>
+    </select>
+    <br>
+    <input type = "submit" value = "Check Food">
+</form>
+<p id="result">{{ result }}</p>
+<!--this form below is to search for food instad-->
+
+<!--<h4>Search for a food:</h4>
+<form action = "check" method="GET">
+  <label for="fruit_name">Fruit Name:</label>
+  <input type="text" id="fruit_name" name="fruit_name" value="{{ fruit_name }}">
+  <br>
+  <input type="submit" value= "Search Food"></input>
+</form>
+{% if message %}
+  <p>{{ message }}</p>
+{% endif %}-->
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+{% block content %}
+
+<div id="recipes">
+<h1>Recipes</h1>
+<div id = "recepies">   
+<ul>
+    {% for recipe in recipes %}
+        <li>
+            <a href="#">{{ recipe.name }}</a> {% if recipe.category %}( {{ recipe.category }} ) {% endif %}
+            {% if recipe.description %}( {{ recipe.description }} ) {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+</div>
+
+{% endblock content %}
